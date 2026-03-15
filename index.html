@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anima Forte Global — Filipino Wellness, Beauty & Strength</title>
+  <meta name="description" content="Anima Forte Global connects authentic Filipino wellness, cosmetics, and fitness brands with the global diaspora market. Partner with us." />
+  <style>
+    :root {
+      --terracotta: #C2714F;
+      --gold: #C9A84C;
+      --forest: #2D4A3E;
+      --cream: #FAF6F0;
+      --charcoal: #2C2C2C;
+      --mid: #6B6B6B;
+      --light-border: #E8DFD4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,246,240,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--light-border);
+      padding: 0 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--forest);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--terracotta);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      color: var(--mid);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--terracotta); }
+
+    .nav-cta {
+      background: var(--forest);
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 4px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--terracotta) !important; color: #fff !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--forest) 0%, #1a2e26 60%, #3a1f10 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 80px 48px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 1;
+    }
+
+    .hero-content {
+      max-width: 680px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 6px 14px;
+      border-radius: 2px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-family: 'Arial', sans-serif;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 44px;
+      max-width: 520px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: #fff;
+      padding: 16px 32px;
+      text-decoration: none;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: #a85a3a; }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #fff;
+      padding: 16px 32px;
+      text-decoration: none;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      border-radius: 4px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* TRUST BAR */
+    .trust-bar {
+      background: var(--gold);
+      padding: 18px 48px;
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--forest);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trust-item::before {
+      content: '✓';
+      font-size: 0.85rem;
+    }
+
+    /* SECTION BASE */
+    section { padding: 100px 48px; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--forest);
+      font-weight: 400;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .section-lead {
+      font-family: 'Arial', sans-serif;
+      font-size: 1rem;
+      color: var(--mid);
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 56px;
+    }
+
+    /* OUR STORY */
+    .story-section {
+      background: #fff;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .story-text p {
+      font-size: 1.05rem;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+      line-height: 1.85;
+    }
+
+    .story-text p strong {
+      color: var(--forest);
+    }
+
+    .story-founder {
+      background: var(--cream);
+      border-left: 3px solid var(--terracotta);
+      padding: 36px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .founder-name {
+      font-size: 1.3rem;
+      color: var(--forest);
+      margin-bottom: 4px;
+    }
+
+    .founder-title {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.8rem;
+      color: var(--terracotta);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .founder-bio {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.93rem;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+
+    /* PILLARS */
+    .pillars-section {
+      background: var(--cream);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .pillar-card {
+      background: #fff;
+      border: 1px solid var(--light-border);
+      border-radius: 8px;
+      padding: 48px 36px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .pillar-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 24px;
+    }
+
+    .pillar-card:nth-child(1) .pillar-icon { background: rgba(194,113,79,0.12); }
+    .pillar-card:nth-child(2) .pillar-icon { background: rgba(45,74,62,0.1); }
+    .pillar-card:nth-child(3) .pillar-icon { background: rgba(201,168,76,0.15); }
+
+    .pillar-label {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+    }
+
+    .pillar-title {
+      font-size: 1.5rem;
+      color: var(--forest);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .pillar-desc {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.75;
+    }
+
+    .pillar-tags {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.75rem;
+      color: var(--forest);
+      background: var(--cream);
+      border: 1px solid var(--light-border);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* HOW WE WORK */
+    .how-section {
+      background: var(--forest);
+      color: #fff;
+    }
+
+    .how-section .section-title { color: #fff; }
+
+    .how-section .section-lead { color: rgba(255,255,255,0.65); }
+
+    .how-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    .how-step {
+      border-top: 2px solid rgba(255,255,255,0.15);
+      padding-top: 28px;
+    }
+
+    .step-num {
+      font-family: 'Arial', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: rgba(201,168,76,0.4);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .step-title {
+      font-size: 1.15rem;
+      color: #fff;
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+
+    .step-desc {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+    }
+
+    /* MARKETS */
+    .markets-section {
+      background: #fff;
+    }
+
+    .markets-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      border: 1px solid var(--light-border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .market-item {
+      padding: 40px 36px;
+      background: #fff;
+      border-right: 1px solid var(--light-border);
+    }
+
+    .market-item:last-child { border-right: none; }
+
+    .market-flag {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .market-name {
+      font-size: 1.2rem;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+
+    .market-desc {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    /* PARTNER SECTION */
+    .partner-section {
+      background: var(--cream);
+    }
+
+    .partner-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .partner-text h3 {
+      font-size: 1.8rem;
+      color: var(--forest);
+      font-weight: 400;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .partner-text p {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.95rem;
+      color: var(--mid);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .partner-list {
+      list-style: none;
+      margin: 24px 0;
+    }
+
+    .partner-list li {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--light-border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .partner-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--terracotta);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* FORM */
+    .form-card {
+      background: #fff;
+      border: 1px solid var(--light-border);
+      border-radius: 8px;
+      padding: 48px 40px;
+    }
+
+    .form-card h4 {
+      font-size: 1.3rem;
+      color: var(--forest);
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .form-card p {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.88rem;
+      color: var(--mid);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--light-border);
+      border-radius: 4px;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+      background: var(--cream);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--forest);
+      background: #fff;
+    }
+
+    .form-group textarea { resize: vertical; min-height: 90px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--terracotta);
+      color: #fff;
+      border: none;
+      padding: 16px;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+
+    .form-submit:hover { background: #a85a3a; }
+
+    .form-note {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.78rem;
+      color: var(--mid);
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* CONTACT / FOOTER */
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.7);
+      padding: 60px 48px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+    }
+
+    .footer-brand .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand .brand-name span { color: var(--gold); }
+
+    .footer-brand p {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-col h5 {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 20px;
+    }
+
+    .footer-col a, .footer-col p {
+      display: block;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: #fff; }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 40px auto 0;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-family: 'Arial', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      section { padding: 72px 24px; }
+      .hero { padding: 80px 24px; }
+      .story-grid,
+      .partner-grid,
+      .how-steps,
+      .pillars-grid,
+      .markets-row,
+      .footer-inner { grid-template-columns: 1fr; }
+      .markets-row { border: none; gap: 16px; }
+      .market-item { border: 1px solid var(--light-border); border-radius: 8px; border-right: 1px solid var(--light-border) !important; }
+      .nav-links { display: none; }
+      .trust-bar { gap: 24px; padding: 18px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Anima <span>Forte</span> Global</a>
+    <ul class="nav-links">
+      <li><a href="#pillars">Our Brands</a></li>
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#how">How We Work</a></li>
+      <li><a href="#partner" class="nav-cta">Partner With Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">Filipino Lifestyle Brands · Global Markets</div>
+      <h1>
+        Bringing the <em>best of Filipino craft</em> to the world — together
+      </h1>
+      <p class="hero-sub">
+        Anima Forte Global is an international trade company that partners with Filipino wellness, beauty, and fitness brands to open doors in the US, UK, and UAE markets. We don't just distribute — we build the path alongside you.
+      </p>
+      <div class="hero-actions">
+        <a href="#partner" class="btn-primary">Apply to Partner With Us</a>
+        <a href="#story" class="btn-outline">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item">US · UK · UAE Distribution</div>
+    <div class="trust-item">Filipino Diaspora Market</div>
+    <div class="trust-item">Logistics & Compliance Support</div>
+    <div class="trust-item">Brand-Led, Not Generic</div>
+  </div>
+
+  <!-- OUR STORY -->
+  <section class="story-section" id="story">
+    <div class="section-inner">
+      <div class="story-grid">
+        <div class="story-text">
+          <p class="section-tag">Our Story</p>
+          <h2 class="section-title">Built for Filipino brands ready to grow globally</h2>
+          <p>
+            We started Anima Forte Global with a simple conviction: Filipino-made products — from botanical skincare to functional wellness supplements to fitness equipment — are world-class. What they often lack is not quality, but a trusted bridge to international markets.
+          </p>
+          <p>
+            Our role is to be that bridge. We handle the complexity so our brand partners don't have to: distribution channels, import and export compliance, logistics coordination, and buyer relationships across the US, UK, and UAE.
+          </p>
+          <p>
+            <strong>We measure our success by our partners' growth.</strong> When a Filipino manufacturer signs their first US wholesale account, or when a Filipina in London finds a brand she grew up with on a salon shelf — that's what we're building toward.
+          </p>
+          <p>
+            We're at an early stage, and we're intentional about that. We'd rather grow alongside a small number of truly aligned brand partners than scale without integrity. If your brand is ready to explore international distribution, we'd love to start a conversation.
+          </p>
+        </div>
+        <div class="story-founder">
+          <div class="founder-name">Jessa C. Macas</div>
+          <div class="founder-title">Founder &amp; Chief Executive</div>
+          <p class="founder-bio">
+            Jessa brings a business degree and direct international work experience across Asian markets to everything Anima Forte Global does. Her cultural fluency — grounded in lived experience, not assumption — shapes how we build relationships with Filipino manufacturers and how we serve diaspora communities abroad.
+          </p>
+          <br/>
+          <p class="founder-bio">
+            Her approach is straightforward: serve the partner and buyer first, and the business follows. She built Anima Forte Global not to be a middleman, but to be a long-term growth partner — someone who understands both where Filipino brands come from and where they can go.
+          </p>
+          <br/>
+          <p class="founder-bio" style="color: var(--terracotta); font-style: italic;">
+            "The goal is never just a transaction. It's making sure every brand in our network has a real future in the markets we open for them."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars-section" id="pillars">
+    <div class="section-inner">
+      <p class="section-tag">What We Carry</p>
+      <h2 class="section-title">Three pillars. One Filipino identity.</h2>
+      <p class="section-lead">We focus exclusively on Filipino-origin brands across three categories — chosen because they reflect how Filipino culture actually lives: care for the body, care for the self, and the discipline to show up strong.</p>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">✨</div>
+          <p class="pillar-label">Pillar One</p>
+          <h3 class="pillar-title">Glow</h3>
+          <p class="pillar-desc">
+            Authentic Filipino cosmetics and skincare — botanical-based, craft-formulated, and rooted in generations of skin knowledge. Products that diaspora communities recognize and trust, now available through curated wholesale channels.
+          </p>
+          <div class="pillar-tags">
+            <span class="tag">Skincare</span>
+            <span class="tag">Cosmetics</span>
+            <span class="tag">Organic Beauty</span>
+            <span class="tag">Salon Products</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">🌿</div>
+          <p class="pillar-label">Pillar Two</p>
+          <h3 class="pillar-title">Wellness</h3>
+          <p class="pillar-desc">
+            Supplements, herbal wellness, rehabilitation products, and self-care essentials from certified Filipino manufacturers. Trusted in Asian markets, now positioned for the growing health-conscious diaspora buyer in the West.
+          </p>
+          <div class="pillar-tags">
+            <span class="tag">Supplements</span>
+            <span class="tag">Herbal Wellness</span>
+            <span class="tag">Rehabilitation</span>
+            <span class="tag">Self-Care</span>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon">💪</div>
+          <p class="pillar-label">Pillar Three</p>
+          <h3 class="pillar-title">Strength</h3>
+          <p class="pillar-desc">
+            Filipino-manufactured fitness equipment, activewear, and functional training gear. From resistance training accessories to performance apparel — built for the diaspora gym community and fitness-forward retail buyers.
+          </p>
+          <div class="pillar-tags">
+            <span class="tag">Fitness Equipment</span>
+            <span class="tag">Activewear</span>
+            <span class="tag">Gym Accessories</span>
+            <span class="tag">Resistance Training</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="how-section" id="how">
+    <div class="section-inner">
+      <p class="section-tag" style="color: var(--gold);">How We Work</p>
+      <h2 class="section-title">You build great products. We open the markets.</h2>
+      <p class="section-lead">Our process is designed to protect your brand, reduce your risk, and make international distribution feel manageable — not overwhelming.</p>
+
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="step-num">01</div>
+          <h4 class="step-title">We Listen First</h4>
+          <p class="step-desc">Every partnership starts with understanding your brand, your production capacity, your goals. We don't assume — we ask. This conversation shapes everything that follows.</p>
+        </div>
+        <div class="how-step">
+          <div class="step-num">02</div>
+          <h4 class="step-title">We Map the Path</h4>
+          <p class="step-desc">Together we assess the right markets, MOQ structure, pricing tiers, and compliance requirements. You see exactly where your products would go and how they'd be positioned.</p>
+        </div>
+        <div class="how-step">
+          <div class="step-num">03</div>
+          <h4 class="step-title">We Handle the Complexity</h4>
+          <p class="step-desc">Logistics, customs, buyer negotiations, invoice terms, regulatory compliance — we manage the operational layer so your team stays focused on what it does best: manufacturing.</p>
+        </div>
+        <div class="how-step">
+          <div class="step-num">04</div>
+          <h4 class="step-title">We Grow Together</h4>
+          <p class="step-desc">As your brand scales into new markets, we scale our support. Every account we open, every reorder we close — you see the results. Transparent reporting, shared milestones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+  <section class="markets-section">
+    <div class="section-inner">
+      <p class="section-tag">Where We Distribute</p>
+      <h2 class="section-title">Three markets. One community.</h2>
+      <p class="section-lead">The Filipino diaspora is one of the most globally dispersed — and most loyal — consumer communities in the world. We're positioned in the three markets where that purchasing power is highest.</p>
+
+      <div class="markets-row">
+        <div class="market-item">
+          <span class="market-flag">🇺🇸</span>
+          <h3 class="market-name">United States</h3>
+          <p class="market-desc">Over 4 million Filipinos in the US — concentrated in California, Hawaii, New York, and Texas. Filipino salons, wellness clinics, balikbayan stores, and grocery chains are the distribution backbone.</p>
+        </div>
+        <div class="market-item">
+          <span class="market-flag">🇬🇧</span>
+          <h3 class="market-name">United Kingdom</h3>
+          <p class="market-desc">A significant and underserved Filipino community, particularly in London and the South East. Strong OFW professional presence with above-average household income and brand loyalty.</p>
+        </div>
+        <div class="market-item">
+          <span class="market-flag">🇦🇪</span>
+          <h3 class="market-name">United Arab Emirates</h3>
+          <p class="market-desc">One of the highest concentrations of OFWs globally. Filipino grocery and wellness products have consistent, high-frequency demand in Dubai, Abu Dhabi, and Sharjah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER FORM -->
+  <section class="partner-section" id="partner">
+    <div class="section-inner">
+      <div class="partner-grid">
+        <div class="partner-text">
+          <p class="section-tag">Partner With Us</p>
+          <h3>We're building our brand network now. Let's talk.</h3>
+          <p>
+            Whether you're a Filipino manufacturer exploring your first international distribution deal, or a B2B buyer looking to stock authentic Filipino brands for your customers — we want to hear from you.
+          </p>
+          <p>
+            We're selective. We work with brands and partners who share a commitment to quality, integrity, and the communities we serve. If that sounds like you, fill in the form and we'll follow up personally.
+          </p>
+
+          <ul class="partner-list">
+            <li>Filipino cosmetics and skincare manufacturers</li>
+            <li>Wellness and supplement brands with export capacity</li>
+            <li>Fitness equipment and activewear manufacturers</li>
+            <li>Filipino salons and beauty parlors (US, UK, UAE)</li>
+            <li>Filipino grocery stores and balikbayan shops</li>
+            <li>Wellness clinics and spa chains serving Filipino communities</li>
+          </ul>
+
+          <p style="margin-top: 8px;">
+            You can also reach us directly at <strong>ops@anima-forte.com</strong> or contact our founder at <strong>jmg@anima-forte.com</strong>
+          </p>
+        </div>
+
+        <div class="form-card">
+          <h4>Express Your Interest</h4>
+          <p>Tell us a little about your business. We respond to every inquiry personally within 2 business days.</p>
+
+          <form action="https://formspree.io/f/mbdzaykd" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first_name">First Name *</label>
+                <input type="text" id="first_name" name="first_name" required placeholder="Maria" />
+              </div>
+              <div class="form-group">
+                <label for="last_name">Last Name *</label>
+                <input type="text" id="last_name" name="last_name" required placeholder="Santos" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Business Email *</label>
+              <input type="email" id="email" name="email" required placeholder="you@yourcompany.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company / Business Name *</label>
+              <input type="text" id="company" name="company" required placeholder="Your company name" />
+            </div>
+
+            <div class="form-group">
+              <label for="type">I am a... *</label>
+              <select id="type" name="partner_type" required>
+                <option value="">Select one</option>
+                <option value="manufacturer">Filipino product manufacturer / exporter</option>
+                <option value="salon">Salon or beauty parlor</option>
+                <option value="grocery">Grocery store or balikbayan shop</option>
+                <option value="wellness_clinic">Wellness clinic or spa</option>
+                <option value="fitness">Fitness studio or gym</option>
+                <option value="distributor">Distributor or wholesaler</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell us about your business and what you're looking for</label>
+              <textarea id="message" name="message" placeholder="Products you carry or manufacture, your market, what you're hoping to achieve..."></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Send My Inquiry</button>
+            <p class="form-note">We respect your privacy. Your information is never shared or sold.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-name">Anima <span>Forte</span> Global</div>
+        <p>An international trade company dedicated to bringing authentic Filipino wellness, beauty, and fitness brands to diaspora communities worldwide.</p>
+        <p style="margin-top: 16px;">Proudly Filipino-led.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="#story">Our Story</a>
+        <a href="#pillars">Our Brands</a>
+        <a href="#how">How We Work</a>
+        <a href="#partner">Partner With Us</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:ops@anima-forte.com">ops@anima-forte.com</a>
+        <a href="mailto:jmg@anima-forte.com">jmg@anima-forte.com</a>
+        <p>United States · United Kingdom · UAE</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Anima Forte Global LLC. All rights reserved.</span>
+      <span>anima-forte.com</span>
+    </div>
+  </footer>
+
+</body>
+</html>
